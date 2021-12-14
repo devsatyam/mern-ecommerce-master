@@ -5,14 +5,13 @@
   "main": "server/index.js",
   "scripts": {
     "build": "npm run build:clean && cross-env NODE_ENV=production webpack --progress --colors",
-    "build:clean": "rimraf ./dist",
+    "build:clean": "./node_modules/rimraf/bin.js ./dist",
     "start": "cross-env NODE_ENV=production node server",
     "start:production": "cross-env NODE_ENV=production node server",
     "production": "npm run build",
     "postinstall": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
-    "rimraf": "./node_modules/rimraf/bin.js"
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   
   "repository": {
